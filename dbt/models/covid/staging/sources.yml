@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: covid_source
+    database: covid          # source catalog
+    schema: default           # schema in covid catalog
+    tables:
+      - name: covid19_vaccines
+      - name: covid19_codes_1
+      - name: covid19_codes_2
+      - name: covid19_codes_3

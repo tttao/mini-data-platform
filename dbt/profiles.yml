@@ -1,0 +1,15 @@
+my_trino_project:
+  target: delta_lake
+  outputs:
+    delta_lake:
+      type: trino
+      catalog: hive                 # your Trino catalog
+      schema: public                  # the schema to use
+      host: localhost                 # Trino coordinator host
+      port: 8082                       # default Trino port
+      user: admin
+      password: admin          # optional, if required
+      http_scheme: http                # or https
+      threads: 4
+      session_properties:              # optional Trino session configs
+        query_max_run_time: '1h'
