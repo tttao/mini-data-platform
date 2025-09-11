@@ -1,2 +1,4 @@
 .venv
 data/postgres
+etc/gsheets-credentials.json
+minio-data/*
