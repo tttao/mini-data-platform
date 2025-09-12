@@ -8,7 +8,7 @@ The objective is not to provide an enterprise grade solution, but to showcase, f
 - Apache Superset
 - DBT
 
-A detailed description can be found on my blog posts: https://fabricemonnier.substack.com/p/self-hosted-data-analytics-delta?r=43vece
+A detailed description of the architecture and of the components can be found on my blog posts: https://fabricemonnier.substack.com/p/self-hosted-data-analytics-delta?r=43vece
 
 # Deployment instructions
 
