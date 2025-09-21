@@ -1,7 +1,3 @@
-{{ config(
-    materialized = 'incremental',
-    format = 'delta'
-) }}
 with codes as (
     select location_key,
            country_code,

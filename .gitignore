@@ -1,6 +1,10 @@
 .venv
+dbt/logs/
+dbt/target
 data/postgres
+<<<<<<< HEAD
+trinodb/etc/gsheets-credentials.json
+=======
 etc/gsheets-credentials.json
+>>>>>>> parent of 048fc49 (rename catalog names in Trino)
 minio-data/*
-dbt/logs/*
-dbt/target/*

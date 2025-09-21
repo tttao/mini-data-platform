@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: covid_source
-    database: stg          # source catalog
+    database: covid          # source catalog
     schema: default           # schema in covid catalog
     tables:
       - name: covid19_vaccines
