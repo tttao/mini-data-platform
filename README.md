@@ -1,17 +1,34 @@
-## Set up connectivity from Trino to Google Workspace API
+## Required software (prerequisites)
+
+- Python
+- Docker
+
+## Deployment procedure
+
+### Set up connectivity from Trino to Google Workspace API
 
 In order for Trino to interact with a Google Sheet, you need to set up credentials. Those should be created in your Google Workspace account, and should then be shared with Trino.
-Follow the steps described in https://trino.io/docs/current/connector/googlesheets.html#credentials, and copy the JSON file in ./trinodb/etc/gsheets-credentials.json.
+Follow the steps described in https://trino.io/docs/current/connector/googlesheets.html#credentials, and copy the JSON file in `./trinodb/etc/gsheets-credentials.json`.
 An example file is provided in that same directory.
 
-## Build the customised Trino and Superset Docker images
+### Install the Python modules
 
-docker compose build --no-cache
+(optional) Use a Python virtual environment: `python -m venv .venv`
+Install the Python modules (`dbt-core` and `dbt-trino`), required for DBT (the transformation engine):
 
+`pip -r requirements.txt`
 
+### Build the customised Trino and Superset Docker images
 
+`docker compose build --no-cache`
 
-**Services Overview**
+### Run the containers
+
+`docker compose up -d`
+
+### Configure Apache Superset
+
+**Services Overview (what is deployed) **
 1. MinIO (`minio`)
 - S3-compatible object store.
 - Runs on ports 9000 (API) and 9001 (console).
@@ -52,5 +69,15 @@ docker compose build --no-cache
 
 - Data from Google Sheets ingested and stored using Delta Lake (parquet files) in MinIO (warehouse bucket).
 - Hive Metastore tracks metadata in Postgres.
-- Trino queries data via Hive Metastore.
-- Superset connects to Trino for BI dashboards
+- Trino reads source data via Google Sheets Connector, and write data using Delta Lake Connector.
+- Superset reads consolidated data in  Delta Lake Tables via Hive for BI dashboards
+
+
+
+Configure Superset:
+
+login on http//localhost:8088 (admin/admin)
+Settings -> Database Connections
+Add two connections to Trino:
+- Trino STG : trino://trino@trino/stg
+- Trino INT : trino://trino@trino/int

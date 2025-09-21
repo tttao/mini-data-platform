@@ -3,7 +3,7 @@ my_trino_project:
   outputs:
     delta_lake:
       type: trino
-      catalog: hive                 # your Trino catalog
+      catalog: int                 # your Trino catalog
       schema: public                  # the schema to use
       host: localhost                 # Trino coordinator host
       port: 8082                       # default Trino port

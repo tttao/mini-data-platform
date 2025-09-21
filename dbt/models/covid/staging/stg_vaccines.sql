@@ -1,3 +1,7 @@
+{{ config(
+    materialized = 'incremental',
+    format = 'delta'
+) }}
 with vaccines as (
     select
         cast (date as date) date,

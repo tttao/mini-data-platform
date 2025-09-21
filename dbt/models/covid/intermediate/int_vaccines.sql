@@ -1,3 +1,7 @@
+{{ config(
+    materialized = 'incremental',
+    format = 'delta'
+) }}
 select v.*,
        c.country_code,
        c.country_name,

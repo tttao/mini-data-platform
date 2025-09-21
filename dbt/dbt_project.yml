@@ -15,4 +15,4 @@ clean-targets:
   - "dbt_modules"
 
 models:
-  + materialized: table
+  +materialized: table
