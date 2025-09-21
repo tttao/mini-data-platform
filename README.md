@@ -21,10 +21,6 @@ A detailed description of the architecture and of the components can be found on
 
 # Deployment instructions
 
-=======
->>>>>>> parent of 048fc49 (rename catalog names in Trino)
-=======
->>>>>>> parent of 048fc49 (rename catalog names in Trino)
 ## Set up connectivity from Trino to Google Workspace API
 
 In order for Trino to interact with a Google Sheet, you need to set up credentials. Those should be created in your Google Workspace account, and should then be shared with Trino.
