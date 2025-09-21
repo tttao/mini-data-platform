@@ -6,6 +6,21 @@
 ## Deployment procedure
 
 ### Set up connectivity from Trino to Google Workspace API
+# Mini-Data-Platform
+
+This project showcases a low-cost data platform build with license-free software, that can be run on your personal infrastrcture.
+The objective is not to provide an enterprise grade solution, but to showcase, for educataional or learning purposes, the features of powerful open-source or license-free software, such as:
+- Trino
+- MinIO
+- Hive
+- Apache Superset
+- DBT
+
+A detailed description of the architecture and of the components can be found on my blog posts: https://fabricemonnier.substack.com/p/self-hosted-data-analytics-delta?r=43vece
+
+# Deployment instructions
+
+## Set up connectivity from Trino to Google Workspace API
 
 In order for Trino to interact with a Google Sheet, you need to set up credentials. Those should be created in your Google Workspace account, and should then be shared with Trino.
 Follow the steps described in https://trino.io/docs/current/connector/googlesheets.html#credentials, and copy the JSON file in `./trinodb/etc/gsheets-credentials.json`.
